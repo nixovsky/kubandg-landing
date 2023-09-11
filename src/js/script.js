@@ -1,16 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const animEl = document.querySelectorAll('anim-el');
+  const animEl = document.querySelectorAll('.anim-el');
+
+  console.log(animEl);
 
   const callback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        console.log('element')
         entry.target.classList.add('load');
-        observer.unobserve(entry.target)
+        observer.unobserve(entry.target);
       }
     })
   }
   const options = {
-    rootMargin: '0px 0px 75px 0px',
+    rootMargin: '0px 0px -50% 0px',
     threshold: 0,
   }
 
@@ -98,5 +101,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   new ItcAccordion(document.querySelector('.accordion'), {
     alwaysOpen: true
+  });
+
+  const formInputs = document.querySelectorAll('.form__input');
+  formInputs.forEach((input) => {
+    input.addEventListener('change', () => {
+      if (input.value != ''){
+        input.classList.add('valid');
+      }
+      else{
+        input.classList.remove('valid');
+      }
+    });
+  });
+
+  const popUpBtns = document.querySelectorAll('.popup-btn');
+  const popUp = document.querySelector('.modal-form');
+  popUpBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.body.style.overflow = 'hidden';
+      popUp.classList.add('open');
+    });
   });
 });

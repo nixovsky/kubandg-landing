@@ -147,13 +147,21 @@ h2{
     font-weight: 700;
     line-height: 3.9975rem;
     color: $black;
+    @media (max-width: 500px) {
+        font-size: 20px;
+        line-height: 15px;
+    }
 }
-p, li, a, span, button {
+p, li, a, span, button, label, input, textarea{
     font-family: 'Arial';
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5rem;
+    @media (max-width: 500px) {
+        line-height: 15px;
+        font-size: 12px;
+    }
 }
 .container,
 .banner-container{
@@ -167,6 +175,16 @@ p, li, a, span, button {
 html{
     font-size: 0.875021vw;
 }
+@media (max-width: 1024px) {
+    html{
+        font-size: 1.1764705882vw;
+    }
+}
+@media (max-width: 500px) {
+    html{
+        font-size: 2.66666666vw;
+    }
+}
 
 @mixin btn{
     padding: 1rem 1.5rem;
@@ -177,6 +195,11 @@ html{
     font-weight: 700;
     line-height: 1.5rem;
     text-align: center;
+    @media (max-width: 500px) {
+        padding: 10px 15px;
+        border-radius: 6px;
+        font-size: 12px;
+    }
 }
 
 .white-btn{
@@ -211,18 +234,39 @@ html{
         justify-content: space-between;
         align-items: center;
 
+        @media (max-width: 500px) {
+            padding: 0 20px;
+        }
+
+        a img{
+            max-width: unset;
+            width: 6.875rem;
+            height: 3.9375rem;
+        }
         .nav ul{
             display:flex;
             align-items: center;
             gap: 2rem;
 
+            @media (max-width: 500px) {
+                display: none;
+            }
+
             .nav__link{
                 color: $black;
+                transition: .25s;
+                &:hover{
+                    color: $orange;
+                }
             }
         }
     }
     .phone{
         color: $black;
+        transition: .25s;
+        &:hover{
+            color: $orange;
+        }
     }
 }
 
@@ -232,13 +276,23 @@ html{
     overflow: hidden;
     .banner-container{
         padding: 6rem 0 16.25rem 0;
+        @media (max-width: 500px) {
+            padding: 6rem 20px 16.25rem 20px;
+        }
         .banner__content{
             width: 52.87rem;
             display: flex;
             flex-direction: column;
             gap: 3rem;
+            @media (max-width: 500px) {
+                width: 100%;
+            }
+
             h1, li{
                 color: $white;
+                @media (max-width: 500px) {
+                    line-height: 4rem;
+                }
             }
             ol{
                 width: 75%;
@@ -246,9 +300,14 @@ html{
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
+                @media (max-width: 500px) {
+                    width: 100%;
+                    gap: 2rem;
+                }
             }
             .banner__btn{
                 width: fit-content;
+                
             }
         }
     }
@@ -258,6 +317,9 @@ html{
         right: 11rem;
         width: auto;
         height: 50rem;
+        @media (max-width: 500px) {
+            display: none;
+        }
     }
     &__marquee{
         position: absolute;
@@ -303,8 +365,15 @@ html{
     position: absolute;
     top: -13rem;
     left: 50%;
-    transform: translatex(-50%);
+    transform: translateX(-50%);
     width: 100%;
+
+    @media (max-width: 500px) {
+        position: relative;
+        transform: translateX(0);
+        top: 0;
+        left: 0;
+    }
     .banner-container{
         display: flex;
         gap: 4rem;
@@ -313,12 +382,20 @@ html{
         border-radius: 1.5rem;
         border: 1px solid rgba(43, 43, 43, 0.20);
 
+        @media (max-width: 500px) {
+            flex-wrap: wrap;
+            border: none;
+        }
+
         .step__element{
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
             position: relative;
             width: 20%;
+            @media (max-width: 500px) {
+                width: 100%;
+            }
 
             &::after{
                 position: absolute;
@@ -328,6 +405,17 @@ html{
                 width: 1px;
                 background: #D5D5D5;
                 height: 100%;
+                @media (max-width: 500px) {
+                    top: 110%;
+                    right: 0;
+                    width: 100%;
+                    height: 1px;
+                }
+            }
+            &:last-child{
+                &::after{
+                    display: none;
+                }
             }
             .step__number{
                 font-size: 2.5rem;
@@ -340,6 +428,11 @@ html{
                 font-weight: 400;
                 line-height: 1.5rem;
                 font-size: 1rem;
+
+                @media (max-width: 501px) {
+                    line-height: 15px;
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -360,10 +453,16 @@ html{
             flex-direction: column;
             gap: 2rem;
             width: 60%;
+            @media (max-width: 500px) {
+                width: 100%;
+            }
 
             ul{
                 display: flex;
                 flex-direction: row;
+                @media (max-width: 500px) {
+                    flex-direction: column;
+                }
                 
                 li{
                     position: relative;
@@ -381,19 +480,31 @@ html{
                     }
                 }
             }
+            @media (max-width: 500px) {
+                .orange-btn{
+                    width: 100%;
+                }
+            }
         }
         &-img{
             position: absolute;
             right: 2.5rem;
             bottom: -2rem;
             transform: translateY(100%);
-            transition: 1s;
-            width: 453.981px;
-            height: 418.913px;
+            transition: 1s cubic-bezier(.56,.92,.65,1.3);
+            max-width: unset;
+            width: 28.37381rem;
+            height: 26.18206rem;
         }
-        &-img.load{
-            transform: translateY(0);
-        }
+        
+    }
+    @media (max-width: 500px) {
+        img{
+            display: none;
+        } 
+    }
+    &__banner.load img{
+        transform: translateY(0);
     }
 }
 .services{
@@ -402,24 +513,50 @@ html{
         align-items: center;
         justify-content: space-between;
         margin-bottom: 2.25rem;
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
     }
     &-list{
         display: flex;
         flex-wrap: wrap;
         gap: 1.5rem;
+        opacity: 0;
+        transform: translateY(-10%);
+        transition: 1.25s ;
+
         .card{
             height: 20rem;
+            width: calc(50% - 0.8rem);
             border-radius: 1.5rem;
             border: 1px solid #FFF;
             background: #F7F7F7;
             display: flex;
             gap: 2.9rem;
             padding: 2.5rem;
+            animation: showCardAnim .25s ease-in-out var(--cadrAnimDelay);
+            @media (max-width: 500px) {
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+            }
 
             &__img{
+                @media (max-width: 500px) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
                 img{
                     width: 7.67675rem;
                     height: 8.45713rem;
+                    @media (max-width: 500px) {
+                        width: 70px;
+                        height: auto;
+                    }
                 }
             }
             .info{
@@ -431,14 +568,41 @@ html{
                     display: flex;
                     flex-direction: column;
                     gap: 0.5rem;
+                    .title{
+                        color: $black;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        line-height: 2.75rem;
+                        @media (max-width: 500px) {
+                            line-height: 20px;
+                            font-size: 15px;
+                        }
+                    }
+                    .text{
+                        font-size: 1rem;
+                        font-weight: 400;
+                        line-height: 1.5rem;
+                        opacity: 0.5;
+                        @media (max-width: 500px) {
+                            line-height: 15px;
+                            font-size: 10px;
+                        }
+                    }
                 }
                 .bottom{
                     display: flex;
                     flex-direction: column;
                     gap: 1.25rem;
+                    .orange-btn {
+                        width: 100%;
+                    }
                 }
             }
         }
+    }
+    .load{
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 .about{
@@ -448,6 +612,18 @@ html{
         gap: 7.88rem;
         margin-bottom: 4.5rem;
 
+        @media (max-width: 500px) {
+            flex-direction: column;
+        }
+
+        > img{
+            width: 36.75rem;
+            height: 40rem;
+            @media (max-width: 500px) {
+                width: 100%;
+                height: auto;
+            }
+        }
         .info{
             h2{
                 margin-bottom: 1rem;
@@ -457,6 +633,10 @@ html{
                 font-size: 1.25rem;
                 line-height: 2rem;
                 color: $black;
+                @media (max-width: 500px) {
+                    font-size: 12px;
+                    line-height: 20px;
+                }
             }
         }
     }
@@ -465,11 +645,32 @@ html{
         align-items: center;
         gap: 7.88rem;
 
+        @media (max-width: 500px) {
+            flex-direction: column;
+        }
+
+        > img{
+            width: 30.375rem;
+            height: 37.5rem;
+
+            @media (max-width: 500px) {
+                width: 100%;
+                height: auto;
+            }
+        }
         .left{
             display: flex;
             flex-direction: column;
             gap: 7rem;
             
+            > img{
+                width: 36.75rem;
+                height: 20.3125rem;
+                @media (max-width: 500px) {
+                    width: 100%;
+                    height: auto;
+                }
+            }
             .info{
                 display: flex;
                 gap: 3rem;
@@ -482,12 +683,20 @@ html{
                         font-weight: 700;
                         line-height: 2.75rem;
                         margin-bottom: 0.75rem;
+                        @media (max-width: 500px) {
+                            font-size: 25px;
+                            line-height: 27px;
+                        }
                     }
                     &-info{
                         color: $black;
                         font-size: 1.25rem;
                         font-weight: 400;
                         line-height: 2rem;
+                        @media (max-width: 500px) {
+                            font-size: 15px;
+                            line-height: 15px;
+                        }
                     }
                 }
             }
@@ -510,6 +719,10 @@ html{
             transition: .25s ease-in-out;
             transform: scale(1);
             background: white;
+
+            @media (max-width: 500px) {
+                padding: 10px;
+            }
             &:hover{
                 transform: scale(0.9);
 
@@ -543,12 +756,20 @@ html{
             padding: 2.5rem;
             display: flex;
             gap: 1.5rem;
+            opacity: 0;
+            @media (max-width: 500px) {
+                width: 100%;
+            }
 
             .stage__number{
                 color: $orange;
                 font-size: 2.5rem;
                 line-height: 2.75rem;
                 font-weight: 700;
+                @media (max-width: 500px) {
+                    font-size: 25px;
+                    line-height: 20px;
+                }
             }
             .stage__title{
                 color: $black;
@@ -556,14 +777,39 @@ html{
                 line-height: 2rem;
                 font-weight: 700;
                 margin-bottom: 0.5rem;
+                @media (max-width: 500px) {
+                    font-size: 11px;
+                    line-height: 20px;
+                }
             }
             .stage__text{
                 color: $black;
                 opacity: 0.5;
                 font-size: 1rem;
                 line-height: 1.5rem;
+                @media (max-width: 500px) {
+                    font-size: 10px;
+                    line-height: 15px;
+                }
             }
         }
+    }
+    &__list.load{
+        @for $i from 1 through 7{
+            .working__stage:nth-child(#{$i}){
+                animation: showCardAnim .5s calc(#{$i} / 5 * 1s) ease-in-out forwards;
+            }
+        }
+    }
+}
+@keyframes showCardAnim {
+    0%{
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
     }
 }
 .reviews{
@@ -571,6 +817,10 @@ html{
         margin-bottom: 2.12rem;
         display: flex;
         justify-content: space-between;
+        @media (max-width: 500px) {
+            flex-direction: column;
+            gap: 15px;
+        }
 
         .reviews-service{
             display: flex;
@@ -624,12 +874,20 @@ html{
         &:hover > img{
             opacity: 0.5;
         }
+        @media (max-width: 500px) {
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
 
         img{
             transition: .25s;
             transform-origin: 50% 100%;
             cursor: pointer;
             border-radius: 1rem;
+            width: 13.8125rem;
+            height: 28.4375rem;
 
             &:hover{
                 opacity: 1;
@@ -642,6 +900,11 @@ html{
     .container{
         display: flex;
         gap: 10.44rem;
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+            gap: 20px
+        }
         
         .left{
             width: calc(80%);
@@ -683,7 +946,7 @@ html{
             position: absolute;
             right: -9%;
             top: 50%;
-            transition: .25s;
+            transition: .25s ease-in-out;
         }
         &::after{
             transform: translateY(-50%);
@@ -699,12 +962,6 @@ html{
         transform: translateY(-50%) rotate(360deg);
     }
 }
-
-.accordion__header:hover {
-
-}
-
-
 
 .accordion__item:last-child{
     border-bottom: 1px solid #D5D5D5;
@@ -722,4 +979,268 @@ html{
 
 .accordion__item:not(.accordion__item_show) .accordion__body {
     display: none;
+}
+
+.map{
+    position: relative;
+    .container{
+
+        padding: 0;
+    }
+    &__container{
+        height: 50rem;
+        @media (max-width: 500px) {
+            height: 20rem;
+        }
+    }
+    &__info{
+        background: #FFFFFF;
+        padding: 3.75rem;
+        width: 36rem;
+        border-radius: 1.5rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @media (max-width: 500px) {
+            position: relative;
+            top: 0;
+            transform: translateY(0);
+            width: 100%;
+        }
+
+        h2{
+            margin-bottom: 1.92rem;
+        }
+    }
+    .map__text{
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+
+        p{
+            color: $black;
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.75rem;
+        }
+    }
+}
+.footer{
+    background: $black;
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    
+        .top{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @media (max-width: 500px) {
+                flex-direction: column;
+            }
+    
+            nav ul{
+                display: flex;
+                gap: 2rem;
+                @media (max-width: 500px) {
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 10px 0;
+                }    
+                li{
+                    width: max-content;
+                    a{
+                        color: $white;
+                        transition: .25s;
+                        &:hover{
+                            color: $orange;
+                        }
+                    }
+                }
+            }
+            > a{
+                white-space: nowrap;
+                color: $white;
+                font-weight: 700;
+                font-size: 1.25rem;
+                transition: .25s;
+                &:hover{
+                    color: $orange;
+                }
+            }
+            .logo{
+                width: 5.42619rem;
+                @media (max-width: 500px) {
+                    width: 86.819px;
+                    height: 54px;
+                }
+                
+                img{
+                    max-width: unset;
+                    width: 5.42619rem;
+                    height: 3.375rem;
+                    @media (max-width: 500px) {
+                        width: 86.819px;
+                        height: 54px;
+                    }
+                }
+            }
+        }
+        .bottom{
+            display: flex;
+            justify-content: space-between;
+            gap: 24rem;
+            @media (max-width: 500px) {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+    
+
+            .info{
+                display: flex;
+                gap: 9.94rem;
+                @media (max-width: 500px) {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+        
+
+                .copyr,
+                .politic{
+                    color: $white;
+                    opacity: 0.3;
+                    transition: .25s;
+                }
+                .politic{
+                    &:hover{
+                        opacity: 1;      
+                    }
+                }
+            }
+            .white-btn{
+                white-space: nowrap;
+                width: 18.75rem;
+            }
+        }     
+    }
+}
+.modal-form{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    visibility: hidden;
+    
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+
+    background: #2b2b2b7b;
+
+    &__container{
+        width: 50rem;
+        padding: 2.5rem;
+        border-radius: 10px;
+        background: $white;
+
+        > p{
+            font-size: 2.5rem;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            &__element{
+                width: 100%;
+                position: relative;
+
+                label{
+                    position: absolute;
+                    font-size: 1.4rem;
+                    left: 1rem;
+                    top: 50%;
+                    transition: .25s;
+                    transform: translateY(-50%);
+                    opacity: 0.5;
+                    user-select: none;
+                    cursor: text;
+                }
+                input,textarea{
+                    border: 1px solid $gray;
+                    border-radius: 20px;
+                    padding: 1.5rem 1rem;
+                    width: 100%;
+                    font-size: 1.4rem;
+
+                }
+                input:focus + label,
+                textarea:focus + label{
+                    animation: formiInputAnim .25s ease-in-out forwards;
+                }
+                input.valid + label,
+                textarea.valid + label{
+                    animation: formiInputAnim .25s ease-in-out forwards;
+                }
+                textarea{
+                    height: 10rem;
+
+                    + label{
+                        top: 1.5rem;
+                        transform: translateY(0);
+                    }
+                }
+                @keyframes formiInputAnim {
+                    0%{
+                        opacity: 1;
+                    }
+                    99%{
+                        display: block;
+                        opacity: 0;
+                    }
+                    100%{
+                        display: none;
+                        opacity: 0;
+                    }
+                }
+            }
+            .poly{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 0.5rem;
+
+                > input{
+                    width: 1rem;
+                }
+            }
+        }
+    }
+}
+.open{
+    animation: formAnim .25s ease-in-out forwards;
+}
+@keyframes formAnim {
+    0%{
+        visibility: hidden;
+        opacity: 0;
+    }
+    1%{
+        visibility: visible;
+        opacity: 0;
+    }
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
 }
