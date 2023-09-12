@@ -1144,11 +1144,20 @@ html{
 
     background: #2b2b2b7b;
 
+    @media (max-width: 500px) {
+        background: $white;
+    }
+
     &__container{
         width: 50rem;
-        padding: 2.5rem;
+        padding: 4rem 2.5rem 2.5rem 2.5rem;
         border-radius: 10px;
         background: $white;
+        position: relative;
+
+        @media (max-width: 500px) {
+            border-radius: 0;
+        }
 
         > p{
             font-size: 2.5rem;
@@ -1177,23 +1186,28 @@ html{
                     cursor: text;
                 }
                 input,textarea{
-                    border: 1px solid $gray;
+                    outline: 1px solid $gray;
                     border-radius: 20px;
                     padding: 1.5rem 1rem;
                     width: 100%;
                     font-size: 1.4rem;
+                    transition: .25s;
+                    &:focus{
+                        outline: 1px solid $orange;
+                    }
 
                 }
                 input:focus + label,
                 textarea:focus + label{
-                    animation: formiInputAnim .25s ease-in-out forwards;
+                    animation: formiInputAnim .2s ease-in-out forwards;
                 }
                 input.valid + label,
                 textarea.valid + label{
-                    animation: formiInputAnim .25s ease-in-out forwards;
+                    animation: formiInputAnim .2s ease-in-out forwards;
                 }
                 textarea{
                     height: 10rem;
+                    resize: none;
 
                     + label{
                         top: 1.5rem;
@@ -1221,26 +1235,112 @@ html{
                 gap: 0.5rem;
 
                 > input{
-                    width: 1rem;
+                    position: absolute;
+                    z-index: -1;
+                    opacity: 0;
+                    width: 1.3rem;
+                    height: 1.3rem;
+                }
+                > label{
+                    opacity: 1;
+                    font-size: 1.1rem;
+                    display: flex;
+                    align-items: center;
+
+                    @media (max-width: 500px) {
+                        display: block;
+                    }
+
+                    a{
+                        color: $light-orange;
+                        font-size: 1.1rem;
+                        transition: .25s;
+
+                        &:hover{
+                            color: $orange
+                        }
+                    }
+                }
+                > label::before{
+                    content: '';
+                    display: inline-block;
+                    width: 1.3rem;
+                    height: 1.3rem;
+                    border: 1px solid #adb5bd;
+                    border-radius: 0.25rem;
+                    margin-right: 0.5rem;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 50% 50%;
+                }
+                > input:checked+label::before{
+                    border-color: $orange;
+                    background-color: $light-orange;
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+                }
+            }
+            > p{
+                font-size: 1.1rem;
+            }
+        }
+        .modal-close-btn{
+            position: absolute;
+            content: '';
+            width: 2.5rem;
+            height: 2.5rem;
+            top: 1.5rem;
+            right: 1.5rem;
+            cursor: pointer;
+
+            svg path{
+                fill: $orange;
+            }
+            &:hover{
+                svg path{
+                    transition: .25s;
+                    fill: $light-orange;
                 }
             }
         }
     }
 }
 .open{
-    animation: formAnim .25s ease-in-out forwards;
+    animation: formAnimShow .25s ease-in-out forwards;
 }
-@keyframes formAnim {
+.close{
+    animation: formAnimHide .25s ease-in-out forwards;
+}
+@keyframes formAnimShow {
     0%{
         visibility: hidden;
         opacity: 0;
+        transform: scale(1.3);
     }
     1%{
         visibility: visible;
         opacity: 0;
+        transform: scale(1.3);
     }
     100%{
         visibility: visible;
         opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes formAnimHide {
+    0%{
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+    99%{
+        visibility: visible;
+        opacity: 0;
+        transform: scale(1.3);
+    }
+    100%{
+        visibility: hide;
+        opacity: 0;
+        transform: scale(1.3);
     }
 }

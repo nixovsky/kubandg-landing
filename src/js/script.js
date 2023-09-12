@@ -117,10 +117,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const popUpBtns = document.querySelectorAll('.popup-btn');
   const popUp = document.querySelector('.modal-form');
+  const closeModal = popUp.querySelector('.modal-close-btn');
   popUpBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       document.body.style.overflow = 'hidden';
+      popUp.classList.remove('close');
       popUp.classList.add('open');
     });
+  });
+  closeModal.addEventListener('click', () => {
+    document.body.style.overflow = 'visible';
+    popUp.classList.remove('open')
+    popUp.classList.add('close');
+  });
+  popUp.addEventListener('click', (e) => {
+    if(e.target === popUp && popUp.classList.contains('open')){
+      document.body.style.overflow = 'visible';
+      popUp.classList.remove('open')
+      popUp.classList.add('close');
+    }
   });
 });
