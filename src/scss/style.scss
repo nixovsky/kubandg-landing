@@ -227,6 +227,10 @@ html{
     }
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .header{
     padding: 1.13rem 0;
     .banner-container{
@@ -871,7 +875,7 @@ html{
     &__list{
         display: flex;
         justify-content: space-between;
-        &:hover > img{
+        &:hover > a{
             opacity: 0.5;
         }
         @media (max-width: 500px) {
@@ -881,7 +885,7 @@ html{
             gap: 10px;
         }
 
-        img{
+        a{
             transition: .25s;
             transform-origin: 50% 100%;
             cursor: pointer;

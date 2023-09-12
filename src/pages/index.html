@@ -7,6 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
     <link rel="stylesheet" href="../css/style.min.css">
 </head>
 
@@ -18,15 +19,15 @@
             </a>
             <nav class="nav">
                 <ul>
-                    <li><a href="#" class="nav__link">Услуги</a>
+                    <li><a href="#services" class="nav__link">Услуги</a>
                     </li>
-                    <li><a href="#" class="nav__link">О нас</a>
+                    <li><a href="#about" class="nav__link">О нас</a>
                     </li>
-                    <li><a href="#" class="nav__link">Этапы работы</a>
+                    <li><a href="#working" class="nav__link">Этапы работы</a>
                     </li>
-                    <li><a href="#" class="nav__link">Этапы работы</a>
+                    <li><a href="#questions" class="nav__link">Вопрос/ответ</a>
                     </li>
-                    <li><a href="#" class="nav__link">Контакты</a>
+                    <li><a href="#contacts" class="nav__link">Контакты</a>
                     </li>
                 </ul>
             </nav>
@@ -106,14 +107,13 @@
             </div>
         </div>
     </section>
-    <section class="services">
+    <section class="services" id="services">
         <div class="container">
             <div class="services__title">
                 <h2>Наши услуги</h2>
                 <p>У нас только честные фиксированные цены на все виды услуг!</p>
             </div>
             <div class="services-list anim-el">
-
                 <div class="card">
                     <div class="card__img">
                         <img src="../img/DERATIZICIYa.svg" alt="">
@@ -129,59 +129,55 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card__img">
-                        <img src="../img/DERATIZICIYa.svg" alt="">
+                        <img src="../img/DEZINSEKCIYA.svg" alt="">
                     </div>
                     <div class="info">
                         <div class="top">
-                            <p class="title">Дератизация</p>
+                            <p class="title">Дезинсекция</p>
                             <p class="text">квартиру 1-5 комнат или дом до 100 м2</p>
                         </div>
                         <div class="bottom">
-                            <p class="price">от 2500 руб</p>
+                            <p class="price">от 3500 руб</p>
                             <button class="orange-btn popup-btn popup-btn">Заказать услугу</button>
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card__img">
-                        <img src="../img/DERATIZICIYa.svg" alt="">
+                        <img src="../img/DEZINFEKCIYa.svg" alt="">
                     </div>
                     <div class="info">
                         <div class="top">
-                            <p class="title">Дератизация</p>
+                            <p class="title">Дезинфекция</p>
                             <p class="text">квартиру 1-5 комнат или дом до 100 м2</p>
                         </div>
                         <div class="bottom">
-                            <p class="price">от 2500 руб</p>
+                            <p class="price">от 4000 руб</p>
                             <button class="orange-btn popup-btn popup-btn">Заказать услугу</button>
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card__img">
-                        <img src="../img/DERATIZICIYa.svg" alt="">
+                        <img src="../img/OBRABOTKA.svg" alt="">
                     </div>
                     <div class="info">
                         <div class="top">
-                            <p class="title">Дератизация</p>
-                            <p class="text">квартиру 1-5 комнат или дом до 100 м2</p>
+                            <p class="title">Акарицидная обработка</p>
+                            <p class="text">территории до 5 стоток (от клещей, комаров, мух и др.)</p>
                         </div>
                         <div class="bottom">
-                            <p class="price">от 2500 руб</p>
+                            <p class="price">от 4000 руб</p>
                             <button class="orange-btn popup-btn popup-btn">Заказать услугу</button>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="top">
                 <img src="../img/about-1.png" alt="">
@@ -217,19 +213,19 @@
         <div class="container">
             <h2>Наши сертификаты</h2>
             <div class="certificates__list">
-                <div class="certificate">
+                <a href="../img/certificate-1.jpg" class="certificate" data-fancybox="first_gallery">
                     <img src="../img/certificate-1.jpg" alt="">
-                </div>
-                <div class="certificate">
+                </a>
+                <a href="../img/certificate-2.jpg" class="certificate" data-fancybox="first_gallery">
                     <img src="../img/certificate-2.jpg" alt="">
-                </div>
-                <div class="certificate">
+                </a>
+                <a href="../img/certificate-3.jpg" class="certificate" data-fancybox="first_gallery">
                     <img src="../img/certificate-3.jpg" alt="">
-                </div>
+                </a>
             </div>
         </div>
     </section>
-    <section class="working">
+    <section class="working" id="working">
         <div class="container">
             <h2>Как мы работаем</h2>
             <div class="working__list anim-el">
@@ -299,15 +295,25 @@
                 </div>
             </div>
             <div class="reviews__list">
-                <img src="../img/review-1.png" alt="">
-                <img src="../img/review-2.png" alt="">
-                <img src="../img/review-3.png" alt="">
-                <img src="../img/review-4.png" alt="">
-                <img src="../img/review-5.png" alt="">
+                <a href="../img/review-1.png" data-fancybox="second_gallery">
+                    <img src="../img/review-1.png" alt="">
+                </a>
+                <a href="../img/review-2.png" data-fancybox="second_gallery">
+                    <img src="../img/review-2.png" alt="">
+                </a>
+                <a href="../img/review-3.png" data-fancybox="second_gallery">
+                    <img src="../img/review-3.png" alt="">
+                </a>
+                <a href="../img/review-4.png" data-fancybox="second_gallery">
+                    <img src="../img/review-4.png" alt="">
+                </a>
+                <a href="../img/review-5.png" data-fancybox="second_gallery">
+                    <img src="../img/review-5.png" alt="">
+                </a>
             </div>
         </div>
     </section>
-    <section class="questions">
+    <section class="questions" id="questions">
         <div class="container">
             <div class="left">
                 <h2>Часто задаваемые вопросы</h2>
@@ -321,7 +327,8 @@
                         </div>
                         <div class="accordion__body">
                             <div class="accordion__content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequuntur autem, mollitia rem aperiam fugit eos officia vel quidem quis officiis dolores porro beatae veritatis tenetur. Culpa ex libero a!
+                                Ответ на этот вопрос зависит от назначения помещения. Например, необходимость в повторной дезинфекции частных домов и квартир может возникнуть не скоро после первой обработки, тогда как юридическим лицам нужно обращаться к услугам дезинфектора намного
+                                чаще - в соответствии с Санитарно-эпидемиологическими требованиями и нормами СанПин.
                             </div>
                         </div>
                     </div>
@@ -331,7 +338,7 @@
                         </div>
                         <div class="accordion__body">
                             <div class="accordion__content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dignissimos a autem perspiciatis sit eum exercitationem expedita omnis ipsam voluptate veritatis dolores similique eligendi, earum quasi officia in facilis dolorum!
+                                Все средства, которые мы используем, прошли проверку на качество и безопасность. Для подтверждения этого мы готовы предоставить сертификаты на используемые средства.
                             </div>
                         </div>
                     </div>
@@ -341,7 +348,7 @@
                         </div>
                         <div class="accordion__body">
                             <div class="accordion__content">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta pariatur dolore consectetur perferendis libero nam sit magni voluptatibus voluptates autem nesciunt, praesentium quidem deserunt ipsa totam esse ullam? Quod, maiores!
+                                В местах, где проводилась обработка не следует возвращаться два часа.
                             </div>
                         </div>
                     </div>
@@ -351,7 +358,7 @@
                         </div>
                         <div class="accordion__body">
                             <div class="accordion__content">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta pariatur dolore consectetur perferendis libero nam sit magni voluptatibus voluptates autem nesciunt, praesentium quidem deserunt ipsa totam esse ullam? Quod, maiores!
+                                На свою работу мы даем 100% гарантию.
                             </div>
                         </div>
                     </div>
@@ -359,7 +366,7 @@
             </div>
         </div>
     </section>
-    <section class="map">
+    <section class="map" id="contacts">
         <div class="map__container">
             <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aec8bedf31f175b001fd17289c1dee3f78552273db8f3f2e1fc74edce5b70cc02&amp;width=100%25&amp;height100%&amp;lang=ru_RU&amp;scroll=false"></script>
         </div>
@@ -390,7 +397,7 @@
     <section class="modal-form">
         <div class="modal-form__container">
             <p>Заказать обработку</p>
-            <form action="" method="POST" class="form">
+            <form action="" method="POST" class="form" id="form">
                 <div class="name form__element">
                     <input type="text" id="name" name="name" class="form__input">
                     <label for="name">Ваше имя*</label>
@@ -411,9 +418,7 @@
                 </div>
             </form>
             <span class="modal-close-btn">
-
 			<svg fill="#000000" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M697.4 759.2l61.8-61.8L573.8 512l185.4-185.4-61.8-61.8L512 450.2 326.6 264.8l-61.8 61.8L450.2 512 264.8 697.4l61.8 61.8L512 573.8z"></path></g></svg>
-
 		</span>
         </div>
     </section>
@@ -426,15 +431,15 @@
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="#">Услуги</a>
+                        <li><a href="#services">Услуги</a>
                         </li>
-                        <li><a href="#">О нас</a>
+                        <li><a href="#about">О нас</a>
                         </li>
-                        <li><a href="#">Этапы работы</a>
+                        <li><a href="#working">Этапы работы</a>
                         </li>
-                        <li><a href="#">Вопрос/ответ</a>
+                        <li><a href="#questions">Вопрос/ответ</a>
                         </li>
-                        <li><a href="#">Контакты</a>
+                        <li><a href="#contacts">Контакты</a>
                         </li>
                     </ul>
                 </nav>
@@ -449,6 +454,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="../js/script.min.js"></script>
 </body>
 

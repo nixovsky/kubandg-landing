@@ -75,34 +75,78 @@
 		</div>
 	</div>
 </section>
-<section class="services">
+<section class="services" id="services">
 	<div class="container">
 		<div class="services__title">
 			<h2>Наши услуги</h2>
 			<p>У нас только честные фиксированные цены на все виды услуг!</p>
 		</div>
 		<div class="services-list anim-el">
-			{% for i in range(0, 4) %}
-				<div class="card">
-					<div class="card__img">
-						<img src="../img/DERATIZICIYa.svg" alt="">
+			<div class="card">
+				<div class="card__img">
+					<img src="../img/DERATIZICIYa.svg" alt="">
+				</div>
+				<div class="info">
+					<div class="top">
+						<p class="title">Дератизация</p>
+						<p class="text">квартиру 1-5 комнат или дом до 100 м2</p>
 					</div>
-					<div class="info">
-						<div class="top">
-							<p class="title">Дератизация</p>
-							<p class="text">квартиру 1-5 комнат или дом до 100 м2</p>
-						</div>
-						<div class="bottom">
-							<p class="price">от 2500 руб</p>
-							<button class="orange-btn popup-btn popup-btn">Заказать услугу</button>
-						</div>
+					<div class="bottom">
+						<p class="price">от 2500 руб</p>
+						<button class="orange-btn popup-btn popup-btn">Заказать услугу</button>
 					</div>
 				</div>
-			{% endfor %}
+			</div>
+			<div class="card">
+				<div class="card__img">
+					<img src="../img/DEZINSEKCIYA.svg" alt="">
+				</div>
+				<div class="info">
+					<div class="top">
+						<p class="title">Дезинсекция</p>
+						<p class="text">квартиру 1-5 комнат или дом до 100 м2</p>
+					</div>
+					<div class="bottom">
+						<p class="price">от 3500 руб</p>
+						<button class="orange-btn popup-btn popup-btn">Заказать услугу</button>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card__img">
+					<img src="../img/DEZINFEKCIYa.svg" alt="">
+				</div>
+				<div class="info">
+					<div class="top">
+						<p class="title">Дезинфекция</p>
+						<p class="text">квартиру 1-5 комнат или дом до 100 м2</p>
+					</div>
+					<div class="bottom">
+						<p class="price">от 4000 руб</p>
+						<button class="orange-btn popup-btn popup-btn">Заказать услугу</button>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card__img">
+					<img src="../img/OBRABOTKA.svg" alt="">
+				</div>
+				<div class="info">
+					<div class="top">
+						<p class="title">Акарицидная обработка</p>
+						<p class="text">территории до 5 стоток (от клещей,
+							комаров, мух и др.)</p>
+					</div>
+					<div class="bottom">
+						<p class="price">от 4000 руб</p>
+						<button class="orange-btn popup-btn popup-btn">Заказать услугу</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
-<section class="about">
+<section class="about" id="about">
 	<div class="container">
 		<div class="top">
 			<img src="../img/about-1.png" alt="">
@@ -138,19 +182,19 @@
 	<div class="container">
 		<h2>Наши сертификаты</h2>
 		<div class="certificates__list">
-			<div class="certificate">
+			<a href="../img/certificate-1.jpg" class="certificate" data-fancybox="first_gallery">
 				<img src="../img/certificate-1.jpg" alt="">
-			</div>
-			<div class="certificate">
+			</a>
+			<a href="../img/certificate-2.jpg" class="certificate" data-fancybox="first_gallery">
 				<img src="../img/certificate-2.jpg" alt="">
-			</div>
-			<div class="certificate">
+			</a>
+			<a href="../img/certificate-3.jpg" class="certificate" data-fancybox="first_gallery">
 				<img src="../img/certificate-3.jpg" alt="">
-			</div>
+			</a>
 		</div>
 	</div>
 </section>
-<section class="working">
+<section class="working" id="working">
 	<div class="container">
 		<h2>Как мы работаем</h2>
 		<div class="working__list anim-el">
@@ -221,15 +265,25 @@
 			</div>
 		</div>
 		<div class="reviews__list">
-			<img src="../img/review-1.png" alt="">
-			<img src="../img/review-2.png" alt="">
-			<img src="../img/review-3.png" alt="">
-			<img src="../img/review-4.png" alt="">
-			<img src="../img/review-5.png" alt="">
+			<a href="../img/review-1.png" data-fancybox="second_gallery">
+				<img src="../img/review-1.png" alt="">
+			</a>
+			<a href="../img/review-2.png" data-fancybox="second_gallery">
+				<img src="../img/review-2.png" alt="">
+			</a>
+			<a href="../img/review-3.png" data-fancybox="second_gallery">
+				<img src="../img/review-3.png" alt="">
+			</a>
+			<a href="../img/review-4.png" data-fancybox="second_gallery"> 
+				<img src="../img/review-4.png" alt="">
+			</a>
+			<a href="../img/review-5.png" data-fancybox="second_gallery">
+				<img src="../img/review-5.png" alt="">
+			</a>
 		</div>
 	</div>
 </section>
-<section class="questions">
+<section class="questions" id="questions">
 	<div class="container">
 		<div class="left">
 			<h2>Часто задаваемые вопросы</h2>
@@ -243,9 +297,7 @@
 					</div>
 					<div class="accordion__body">
 						<div class="accordion__content">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequuntur autem, mollitia rem
-							aperiam
-							fugit eos officia vel quidem quis officiis dolores porro beatae veritatis tenetur. Culpa ex libero a!
+							Ответ на этот вопрос зависит от назначения помещения. Например, необходимость в повторной дезинфекции частных домов и квартир может возникнуть не скоро после первой обработки, тогда как юридическим лицам нужно обращаться к услугам дезинфектора намного чаще - в соответствии с Санитарно-эпидемиологическими требованиями и нормами СанПин.
 						</div>
 					</div>
 				</div>
@@ -255,10 +307,7 @@
 					</div>
 					<div class="accordion__body">
 						<div class="accordion__content">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dignissimos a autem perspiciatis sit eum
-							exercitationem expedita omnis ipsam voluptate veritatis dolores similique eligendi, earum quasi officia
-							in
-							facilis dolorum!
+							Все средства, которые мы используем, прошли проверку на качество и безопасность. Для подтверждения этого мы готовы предоставить сертификаты на используемые средства.
 						</div>
 					</div>
 				</div>
@@ -268,11 +317,7 @@
 					</div>
 					<div class="accordion__body">
 						<div class="accordion__content">
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta pariatur dolore consectetur perferendis
-							libero
-							nam sit magni voluptatibus voluptates autem nesciunt, praesentium quidem deserunt ipsa totam esse ullam?
-							Quod,
-							maiores!
+							В местах, где проводилась обработка не следует возвращаться два часа.
 						</div>
 					</div>
 				</div>
@@ -282,11 +327,7 @@
 					</div>
 					<div class="accordion__body">
 						<div class="accordion__content">
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta pariatur dolore consectetur perferendis
-							libero
-							nam sit magni voluptatibus voluptates autem nesciunt, praesentium quidem deserunt ipsa totam esse ullam?
-							Quod,
-							maiores!
+							На свою работу мы даем 100% гарантию.
 						</div>
 					</div>
 				</div>
@@ -294,7 +335,7 @@
 		</div>
 	</div>
 </section>
-<section class="map">
+<section class="map" id="contacts">
 	<div class="map__container">
 		<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aec8bedf31f175b001fd17289c1dee3f78552273db8f3f2e1fc74edce5b70cc02&amp;width=100%25&amp;height100%&amp;lang=ru_RU&amp;scroll=false"></script>
 	</div>
@@ -325,7 +366,7 @@
 <section class="modal-form">
 	<div class="modal-form__container">
 		<p>Заказать обработку</p>
-		<form action="" method="POST" class="form">
+		<form action="" method="POST" class="form" id="form">
 			<div class="name form__element">
 				<input type="text" id="name" name="name" class="form__input">
 				<label for="name">Ваше имя*</label>
